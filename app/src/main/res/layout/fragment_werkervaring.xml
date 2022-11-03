@@ -7,7 +7,6 @@
         <variable
             name="myModel"
             type="com.example.myexperience.WerkervaringViewModel">
-
         </variable>
     </data>
 
@@ -24,7 +23,7 @@
             android:layout_marginTop="150dp"
             android:background="@color/purple_200"
             android:fontFamily="@font/akaya_telivigala"
-            android:text="@{myModel.detailGegevens.school}"
+            android:text="@{myModel.ervaring1.school}"
             android:textColor="@color/purple_700"
             android:textSize="48sp"
             android:textStyle="bold"
@@ -37,7 +36,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="NaarErvaring1"
+            android:onClick="@{() -> myModel.naarWerkervaringDetail()}"
+            android:text="WerkervaringDetail"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/schoolErvaring7" />

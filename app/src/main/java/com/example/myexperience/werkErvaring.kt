@@ -1,11 +1,8 @@
 package com.example.myexperience
 
-class werkErvaring(var datumVan: String, var datumTot: String, var school: String, var functie: String) {
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
 
-    @JvmName("getSchool1")
-    fun getSchool(): String {
-        return school
-    }
-
-
+@Parcelize
+class werkErvaring(var datumVan: String, var datumTot: String, var school: String, var functie: String) : Parcelable {
 }

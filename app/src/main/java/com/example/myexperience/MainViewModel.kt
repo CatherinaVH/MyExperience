@@ -12,6 +12,12 @@ class MainViewModel : ViewModel() {
             return _gebruiker
         }
 
+    private var _ervaring1 : MutableLiveData<werkErvaring> = MutableLiveData()
+    val ervaring1: LiveData<werkErvaring>
+        get() {
+            return _ervaring1
+        }
+
     private var _navigeerNaarGebruikerGegevens : MutableLiveData<Boolean> = MutableLiveData()
     val navigeerNaarGebruikerGegevens: LiveData<Boolean>
         get() {
@@ -34,6 +40,7 @@ class MainViewModel : ViewModel() {
 
     init {
         _gebruiker.value = MockUpDB().getGebruiker()
+        _ervaring1.value = MockUpDB().getWerkervaring1()
         _navigeerNaarGebruikerGegevens.value = false
         _navigeerNaarErvaringen.value = false
     }

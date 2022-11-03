@@ -37,6 +37,7 @@ class GebruikerFragment : Fragment() {
     }
 
     private fun navigeerNaarGebruikerGegevens() {
-        requireView().findNavController().navigate(MainFragmentDirections.actionMainFragmentToGebruikerFragment2())
+        var gebruiker: Gebruiker = viewModel.gebruiker.value!!
+        requireView().findNavController().navigate(MainFragmentDirections.actionMainFragmentToGebruikerFragment2(gebruiker))
     }
 }

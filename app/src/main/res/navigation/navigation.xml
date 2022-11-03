@@ -20,11 +20,6 @@
     </fragment>
 
     <fragment
-        android:id="@+id/gebruikerFragment"
-        android:name="com.example.myexperience.GebruikerFragment"
-        android:label="GebruikerFragment"
-        tools:layout="@layout/fragment_gebruiker"/>
-    <fragment
         android:id="@+id/werkervaringFragment"
         android:name="com.example.myexperience.WerkervaringFragment"
         android:label="WerkervaringFragment"
@@ -32,11 +27,39 @@
         <action
             android:id="@+id/action_werkervaringFragment_to_detailErvaringFragment"
             app:destination="@id/detailErvaringFragment" />
+        <argument
+            android:name="werkervaring"
+            app:argType="com.example.myexperience.werkErvaring"/>
     </fragment>
+
+    <fragment
+        android:id="@+id/gebruikerFragment"
+        android:name="com.example.myexperience.GebruikerFragment"
+        android:label="GebruikerFragment"
+        tools:layout="@layout/fragment_gebruiker">
+        <action
+            android:id="@+id/action_gebruikerFragment_to_wijzigenGegevensGebruikerFragment"
+            app:destination="@id/wijzigenGegevensGebruikerFragment" />
+        <argument
+            android:name="gebruiker"
+            app:argType="com.example.myexperience.Gebruiker"/>
+    </fragment>
+
+
+
     <fragment
         android:id="@+id/detailErvaringFragment"
         android:name="com.example.myexperience.DetailErvaringFragment"
         android:label="DetailErvaringFragment"
         tools:layout="@layout/fragment_detail_ervaring"/>
+    <argument
+        android:name="werkervaring"
+        app:argType="com.example.myexperience.werkErvaring"/>
+
+    <fragment
+        android:id="@+id/wijzigenGegevensGebruikerFragment"
+        android:name="com.example.myexperience.WijzigenGegevensGebruikerFragment"
+        android:label="fragment_wijzigen_gegevens_gebruiker"
+        tools:layout="@layout/fragment_wijzigen_gegevens_gebruiker" />
 
 </navigation>

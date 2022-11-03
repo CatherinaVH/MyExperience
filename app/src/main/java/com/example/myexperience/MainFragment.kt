@@ -23,6 +23,7 @@ class MainFragment : Fragment() {
 
         val fact = MainViewModelFactory()
         viewModel = ViewModelProvider(this, fact).get(MainViewModel::class.java)
+
         viewModel.navigeerNaarGebruikerGegevens.observe(viewLifecycleOwner, Observer {
             if (it) {
                 navigeerNaarGebruikerGegevens()
@@ -41,11 +42,13 @@ class MainFragment : Fragment() {
     }
 
     fun navigeerNaarGebruikerGegevens() {
-        requireView().findNavController().navigate(MainFragmentDirections.actionMainFragmentToGebruikerFragment2())
+        var gebruiker : Gebruiker = viewModel.gebruiker.value!!
 
+        requireView().findNavController().navigate(MainFragmentDirections.actionMainFragmentToGebruikerFragment2(gebruiker))
     }
 
     fun navigeerNaarErvaringen() {
-        requireView().findNavController().navigate(MainFragmentDirections.actionMainFragmentToWerkervaringFragment())
+        var ervaring1: werkErvaring = viewModel.ervaring1.value!!
+        requireView().findNavController().navigate(MainFragmentDirections.actionMainFragmentToWerkervaringFragment(ervaring1))
     }
 }

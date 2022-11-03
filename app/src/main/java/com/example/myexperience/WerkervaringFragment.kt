@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import com.example.myexperience.databinding.FragmentWerkervaringBinding
 
@@ -21,20 +22,20 @@ class WerkervaringFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_werkervaring, container, false)
 
         val fact = WerkervaringViewModelFactory()
-
         viewModel = ViewModelProvider(this, fact).get(WerkervaringViewModel::class.java)
 
-        viewModel.navigeerNaarwerkErvaring.observe(viewLifecycleOwner) {
+        viewModel.navigeerNaarwerkErvaring.observe(viewLifecycleOwner, Observer {
             if (it) {
                 navigeerNaarDetailErvaringen()
             }
-        }
+        })
 
         return binding.root
     }
 
     private fun navigeerNaarDetailErvaringen() {
-        //requireView().findNavController().navigate(MainFragmentDirections.)
+        requireView().findNavController()
+            .navigate(WerkervaringFragmentDirections.actionWerkervaringFragmentToDetailErvaringFragment())
     }
 
 }

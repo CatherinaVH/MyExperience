@@ -8,9 +8,10 @@ class WerkervaringViewModel : ViewModel() {
 
     private var _detailGegevens: MutableLiveData<werkErvaring> = MutableLiveData()
 
-    val detailGegevens: LiveData<werkErvaring>
+    private var _ervaring1 : MutableLiveData<werkErvaring> = MutableLiveData()
+    val ervaring1: LiveData<werkErvaring>
         get() {
-        return _detailGegevens
+            return _ervaring1
         }
 
     private var _navigeerNaarDetailWerkervaring : MutableLiveData<Boolean> = MutableLiveData()
@@ -19,12 +20,12 @@ class WerkervaringViewModel : ViewModel() {
             return _navigeerNaarDetailWerkervaring
         }
 
-    fun naarWerkervaring() {
+    fun naarWerkervaringDetail() {
         _navigeerNaarDetailWerkervaring.value = true
     }
 
     init {
-        _detailGegevens.value = MockUpDB().getWerkervaring1()
+        _ervaring1.value = MockUpDB().getWerkervaring1()
         _navigeerNaarDetailWerkervaring.value = false
     }
 }
