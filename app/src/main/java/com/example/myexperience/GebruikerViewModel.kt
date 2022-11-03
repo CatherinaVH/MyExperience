@@ -18,24 +18,27 @@ class GebruikerViewModel : ViewModel() {
             return _navigeerNaarGebruikerGegevens
         }
 
-    private var _wijzigGegevensGebruiker : MutableLiveData<Boolean> = MutableLiveData()
-    val wijzigGegevensGebruiker: LiveData<Boolean>
-        get() {
-            return _wijzigGegevensGebruiker
-        }
+    // WAARVOOR DIENT DIT?
+//    private var _wijzigGegevensGebruiker : MutableLiveData<Boolean> = MutableLiveData()
+//    val wijzigGegevensGebruiker: LiveData<Boolean>
+//        get() {
+//            return _wijzigGegevensGebruiker
+//        }
 
-    fun naarGebruikerGegevens() {
-        _navigeerNaarGebruikerGegevens.value = true
-    }
+    // EN DIT?
+//    fun naarGebruikerGegevens() {
+//        _navigeerNaarGebruikerGegevens.value = true
+//    }
 
     fun wijzigGegevens() {
-        _wijzigGegevensGebruiker.value = true
+        //_wijzigGegevensGebruiker.value = true
+        _navigeerNaarGebruikerGegevens.value = true
     }
 
     init {
         _gebruiker.value = MockUpDB().getGebruiker()
         _navigeerNaarGebruikerGegevens.value = false
-        _wijzigGegevensGebruiker.value = false
+        //_wijzigGegevensGebruiker.value = false
     }
 
 

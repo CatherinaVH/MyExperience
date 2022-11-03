@@ -19,10 +19,11 @@ class GebruikerFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                     savedInstanceState: Bundle?): View? {
 
+
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_gebruiker, container, false)
 
-        val fact = GebruikerViewModelFactory()
 
+        val fact = GebruikerViewModelFactory()
         viewModel = ViewModelProvider(this, fact).get(GebruikerViewModel::class.java)
 
         viewModel.navigeerNaarGebruikerGegevens.observe(viewLifecycleOwner, Observer {
@@ -31,6 +32,7 @@ class GebruikerFragment : Fragment() {
             }
         })
 
+
         binding.myModel = viewModel
 
         return binding.root
@@ -38,6 +40,10 @@ class GebruikerFragment : Fragment() {
 
     private fun navigeerNaarGebruikerGegevens() {
         var gebruiker: Gebruiker = viewModel.gebruiker.value!!
-        requireView().findNavController().navigate(MainFragmentDirections.actionMainFragmentToGebruikerFragment2(gebruiker))
+        // GEBRUIK DE FRAGMENTDIRECTIONS VAN HET FRAGMENT WAARIN JE WERKT
+        //requireView().findNavController().navigate(MainFragmentDirections.actionMainFragmentToGebruikerFragment2(gebruiker))
+        requireView().findNavController().navigate(GebruikerFragmentDirections.actionGebruikerFragmentToWijzigenGegevensGebruikerFragment())
     }
+
+
 }
