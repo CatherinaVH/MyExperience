@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="myModel"
+            type="com.example.myexperience.MainViewModel">
+
+        </variable>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/achtergrond"
+        tools:context=".MainFragment">
+
+        <Button
+            android:id="@+id/btnNaarErvaringen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="80dp"
+            android:background="@android:drawable/button_onoff_indicator_off"
+            android:backgroundTint="@android:color/holo_green_light"
+            android:backgroundTintMode="screen"
+            android:fontFamily="@font/akaya_telivigala"
+            android:foregroundTint="@color/design_default_color_error"
+            android:foregroundTintMode="multiply"
+            android:onClick="@{() -> myModel.naarErvaringen()}"
+            android:shadowColor="@color/black"
+            android:shadowDx="@dimen/material_emphasis_disabled"
+            android:text="@string/Ervaringen"
+            android:textColor="@color/purple_700"
+            android:textColorHighlight="@color/white"
+            app:layout_constraintBottom_toTopOf="@+id/imageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.503"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnNaarGebruikerGegevens" />
+
+        <Button
+            android:id="@+id/btnNaarGebruikerGegevens"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:background="@android:drawable/button_onoff_indicator_off"
+            android:backgroundTint="@android:color/holo_green_light"
+            android:backgroundTintMode="screen"
+            android:fontFamily="@font/akaya_telivigala"
+            android:onClick="@{() -> myModel.naarGebruikerGegevens()}"
+            android:text="@string/GebruikersGegevens"
+            android:textColor="@color/purple_700"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tekstWelkom" />
+
+        <TextView
+            android:id="@+id/WelkomApp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:backgroundTint="@color/material_dynamic_primary90"
+            android:fontFamily="@font/akaya_telivigala"
+            android:shadowColor="#3E3D3D"
+            android:text="@string/WelkomApp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:typeface="monospace"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tekstWelkom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/akaya_telivigala"
+            android:text="@string/Welkomtekst"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/WelkomApp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="400dp"
+            android:layout_height="300dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/school" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

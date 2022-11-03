@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    app:startDestination="@id/mainFragment"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.myexperience.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_gebruikerFragment2"
+            app:destination="@id/gebruikerFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_werkervaringFragment"
+            app:destination="@id/werkervaringFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gebruikerFragment"
+        android:name="com.example.myexperience.GebruikerFragment"
+        android:label="GebruikerFragment"
+        tools:layout="@layout/fragment_gebruiker"/>
+    <fragment
+        android:id="@+id/werkervaringFragment"
+        android:name="com.example.myexperience.WerkervaringFragment"
+        android:label="WerkervaringFragment"
+        tools:layout="@layout/fragment_werkervaring">
+        <action
+            android:id="@+id/action_werkervaringFragment_to_detailErvaringFragment"
+            app:destination="@id/detailErvaringFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailErvaringFragment"
+        android:name="com.example.myexperience.DetailErvaringFragment"
+        android:label="DetailErvaringFragment"
+        tools:layout="@layout/fragment_detail_ervaring"/>
+
+</navigation>
