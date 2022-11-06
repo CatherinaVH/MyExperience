@@ -1,13 +1,28 @@
 <resources>
     <string name="app_name">Mijn WerkErvaringen</string>
     <string name="welkomGebruiker">Welkom, %s</string>
-    <string name="datumVan">Gewerkt vanaf: %s</string>
-    <string name="datumTot">Gewerkt tot: %s</string>
+    <string name="datumVan">Gewerkt vanaf: </string>
+    <string name="datumTot">Gewerkt tot: </string>
     <string name="GebruikersGegevens">Naar gegevens gebruiker</string>
     <string name="testGebruiker">Test, %s</string>
-    <string name="WelkomApp">Welkom bij "Mijn Werkervaringen"</string>
-    <string name="Welkomtekst">Verzamel hier je ervaringen bij Stad Gent voor op je CV</string>
+    <string name="WelkomApp1">Welkom bij</string>
+    <string name="WelkomApp2">Mijn Werkervaringen</string>
+    <string name="Welkomtekst">Verzamel hier je ervaringen bij scholengroep Stad Gent</string>
     <string name="Ervaringen">Naar lijst ervaringen</string>
     <string name="WijzigGegevens">Wijzig gegevens</string>
     <string name="TitelWijzigenGegevens">Wijzig hier je gegevens</string>
+    <string name="title_activity_gebruiker">GebruikerActivity</string>
+
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="SchoolDetail">School:</string>
 </resources>

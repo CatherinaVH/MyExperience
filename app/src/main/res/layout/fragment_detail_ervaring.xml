@@ -1,19 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="myModel"
+            type="com.example.myexperience.DetailErvaringViewModel">
+        </variable>
+    </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/achtergrond"
         tools:context=".DetailErvaringFragment">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/achtergrond"
-            android:text="Hello" />
+            android:id="@+id/detailDatumVan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="50dp"
+            android:text="@string/datumVan"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detailSchool" />
 
+        <TextView
+            android:id="@+id/detailSchool"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="100dp"
+            android:text="@string/SchoolDetail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/GegevensSchool"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:layout_marginEnd="100dp"
+            android:text="@{myModel.ervaring.school}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/DetailDatumTot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="50dp"
+            android:text="Gewerkt tot"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/detailDatumVan" />
+
+        <TextView
+            android:id="@+id/DetailFunctie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="50dp"
+            android:text="Functie"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/DetailDatumTot" />
+
+        <TextView
+            android:id="@+id/GegevensVanaf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="100dp"
+            android:text="@{myModel.ervaring.datumVan}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/GegevensSchool" />
+
+        <TextView
+            android:id="@+id/GegevensTot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="100dp"
+            android:text="@{myModel.ervaring.datumTot}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/GegevensVanaf" />
+
+        <TextView
+            android:id="@+id/GegevensFUntie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="100dp"
+            android:text="@{myModel.ervaring.functie}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/GegevensTot" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

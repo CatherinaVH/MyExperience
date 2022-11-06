@@ -25,19 +25,8 @@ class GebruikerFragment : Fragment() {
 
         viewModel = ViewModelProvider(this, fact).get(GebruikerViewModel::class.java)
 
-        viewModel.navigeerNaarGebruikerGegevens.observe(viewLifecycleOwner, Observer {
-            if (it) {
-                navigeerNaarGebruikerGegevens()
-            }
-        })
-
         binding.myModel = viewModel
 
         return binding.root
-    }
-
-    private fun navigeerNaarGebruikerGegevens() {
-        var gebruiker: Gebruiker = viewModel.gebruiker.value!!
-        requireView().findNavController().navigate(MainFragmentDirections.actionMainFragmentToGebruikerFragment2(gebruiker))
     }
 }

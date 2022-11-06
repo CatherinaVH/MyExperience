@@ -38,6 +38,14 @@ class MainViewModel : ViewModel() {
         _navigeerNaarErvaringen.value = true
     }
 
+    fun naarGebruikerGegevensFinishec() {
+        _navigeerNaarGebruikerGegevens.value = false
+    }
+
+    fun naarErvaringenFinished() {
+        _navigeerNaarErvaringen.value = false
+    }
+
     init {
         _gebruiker.value = MockUpDB().getGebruiker()
         _ervaring1.value = MockUpDB().getWerkervaring1()

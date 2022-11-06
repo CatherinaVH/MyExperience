@@ -17,30 +17,34 @@
         tools:context=".WerkervaringFragment">
 
         <TextView
-            android:id="@+id/schoolErvaring7"
+            android:id="@+id/schoolErvaring1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="150dp"
-            android:background="@color/purple_200"
             android:fontFamily="@font/akaya_telivigala"
+            android:onClick="@{() -> myModel.naarWerkervaringDetail1()}"
             android:text="@{myModel.ervaring1.school}"
             android:textColor="@color/purple_700"
-            android:textSize="48sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/buttonTest"
+        <TextView
+            android:id="@+id/schoolErvaring2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:onClick="@{() -> myModel.naarWerkervaringDetail()}"
-            android:text="WerkervaringDetail"
+            android:fontFamily="@font/akaya_telivigala"
+            android:onClick="@{() -> myModel.naarWerkervaringDetail2()}"
+            android:text="@{myModel.ervaring2.school}"
+            android:textColor="@color/purple_700"
+            android:textSize="24sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/schoolErvaring7" />
+            app:layout_constraintTop_toBottomOf="@+id/schoolErvaring1" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
