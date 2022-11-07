@@ -7,31 +7,25 @@ import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
-import com.example.myexperience.databinding.FragmentDetailErvaringBinding
-import com.example.myexperience.databinding.FragmentGebruikerBinding
-import com.example.myexperience.databinding.FragmentWerkervaringBinding
+import com.example.myexperience.databinding.FragmentAddErvaringBinding
 
-class DetailErvaringFragment : Fragment() {
+class AddErvaringFragment : Fragment() {
 
-    private lateinit var viewModel: DetailErvaringViewModel
-    private lateinit var binding: FragmentDetailErvaringBinding
+    private lateinit var viewModel: AddErvaringViewModel
+    private lateinit var binding: FragmentAddErvaringBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+        savedInstanceState: Bundle?): View? {
 
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_detail_ervaring, container, false)
+        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_add_ervaring, container, false)
 
-        val args = DetailErvaringFragmentArgs.fromBundle(requireArguments())
-
-        val fact = DetailErvaringViewModelFactory(args.werkErvaring)
-        viewModel = ViewModelProvider(this, fact).get(DetailErvaringViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(AddErvaringViewModel::class.java)
 
         binding.myModel = viewModel
 
         setHasOptionsMenu(true)
 
         return binding.root
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

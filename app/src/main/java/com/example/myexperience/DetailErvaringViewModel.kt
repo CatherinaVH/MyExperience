@@ -3,6 +3,7 @@ package com.example.myexperience
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.myexperience.databinding.FragmentAddErvaringBinding
 
 class DetailErvaringViewModel(__ervaring: werkErvaring) : ViewModel() {
 
@@ -11,6 +12,8 @@ class DetailErvaringViewModel(__ervaring: werkErvaring) : ViewModel() {
         get() {
             return _ervaring
         }
+
+
 
     init {
         _ervaring.value = __ervaring

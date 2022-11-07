@@ -30,6 +30,9 @@
         <argument
             android:name="werkervaring"
             app:argType="com.example.myexperience.werkErvaring"/>
+        <action
+            android:id="@+id/action_werkervaringFragment_to_addErvaringFragment"
+            app:destination="@id/addErvaringFragment" />
     </fragment>
 
     <fragment
@@ -56,5 +59,10 @@
     <argument
         android:name="werkervaring"
         app:argType="com.example.myexperience.werkErvaring"/>
+    <fragment
+        android:id="@+id/addErvaringFragment"
+        android:name="com.example.myexperience.AddErvaringFragment"
+        android:label="fragment_add_ervaring"
+        tools:layout="@layout/fragment_add_ervaring" />
 
 </navigation>

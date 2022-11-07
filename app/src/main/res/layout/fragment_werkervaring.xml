@@ -21,10 +21,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="150dp"
-            android:fontFamily="@font/akaya_telivigala"
+            android:fontFamily="@font/advent_pro_medium"
             android:onClick="@{() -> myModel.naarWerkervaringDetail1()}"
             android:text="@{myModel.ervaring1.school}"
-            android:textColor="@color/purple_700"
+            android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
@@ -36,15 +36,62 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:fontFamily="@font/akaya_telivigala"
+            android:fontFamily="@font/advent_pro_medium"
             android:onClick="@{() -> myModel.naarWerkervaringDetail2()}"
             android:text="@{myModel.ervaring2.school}"
-            android:textColor="@color/purple_700"
+            android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/schoolErvaring1" />
+
+        <TextView
+            android:id="@+id/schoolErvaring3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/advent_pro_medium"
+            android:onClick="@{() -> myModel.naarWerkervaringDetail3()}"
+            android:text="@{myModel.ervaring3.school}"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/schoolErvaring2" />
+
+        <TextView
+            android:id="@+id/schoolErvaring4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/advent_pro_medium"
+            android:onClick="@{() -> myModel.naarWerkervaringDetail4()}"
+            android:text="@{myModel.ervaring4.school}"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/schoolErvaring3" />
+
+        <Button
+            android:id="@+id/nieuweErvaring"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="100dp"
+            android:backgroundTint="@color/material_dynamic_neutral90"
+            android:fontFamily="@font/advent_pro_medium"
+            android:onClick="@{() -> myModel.naarVoegNieuweToe()}"
+            android:shadowColor="@color/black"
+            android:shadowDx="@dimen/material_emphasis_disabled_background"
+            android:text="@string/nieuweToevoegen"
+            android:textColor="@color/black"
+            android:textColorHighlight="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

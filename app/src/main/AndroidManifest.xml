@@ -16,7 +16,7 @@
             android:name=".GebruikerActivity"
             android:exported="false"
             android:label="@string/title_activity_gebruiker"
-            android:theme="@style/Theme.MyExperience.NoActionBar">
+            android:theme="@style/Theme.MyExperience">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

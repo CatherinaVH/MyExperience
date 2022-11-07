@@ -2,13 +2,13 @@ package com.example.myexperience
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
+import androidx.navigation.ui.NavigationUI
 import com.example.myexperience.databinding.FragmentWerkervaringBinding
 
 class WerkervaringFragment : Fragment() {
@@ -37,9 +37,28 @@ class WerkervaringFragment : Fragment() {
             }
         })
 
+        viewModel.voegNieuweErvaringToe.observe(viewLifecycleOwner, Observer {
+            if (it) {
+                navigeerNaarNieuweToevoegen()
+            }
+        })
+
         binding.myModel = viewModel
 
+        setHasOptionsMenu(true)
+
         return binding.root
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.options_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return NavigationUI.
+        onNavDestinationSelected(item,requireView().findNavController())
+                || super.onOptionsItemSelected(item)
     }
 
     private fun navigeerNaarDetailErvaringen1() {
@@ -55,4 +74,25 @@ class WerkervaringFragment : Fragment() {
             .navigate(WerkervaringFragmentDirections.actionWerkervaringFragmentToDetailErvaringFragment(werkErvaring2))
         viewModel.navigateToWerkErvaringenFinished()
     }
+
+    private fun navigeerNaarDetailErvaringen3() {
+        var werkErvaring3: werkErvaring = viewModel.ervaring3.value!!
+        requireView().findNavController()
+            .navigate(WerkervaringFragmentDirections.actionWerkervaringFragmentToDetailErvaringFragment(werkErvaring3))
+        viewModel.navigateToWerkErvaringenFinished()
+    }
+
+    private fun navigeerNaarDetailErvaringen4() {
+        var werkErvaring4: werkErvaring = viewModel.ervaring4.value!!
+        requireView().findNavController()
+            .navigate(WerkervaringFragmentDirections.actionWerkervaringFragmentToDetailErvaringFragment(werkErvaring4))
+        viewModel.navigateToWerkErvaringenFinished()
+    }
+
+    private fun navigeerNaarNieuweToevoegen() {
+        requireView().findNavController()
+            .navigate(WerkervaringFragmentDirections.actionWerkervaringFragmentToAddErvaringFragment())
+        viewModel.navigateToAddWerkervaringFinished()
+    }
+
 }
