@@ -2,17 +2,14 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-
     <item
         android:id="@+id/werkervaringFragment"
-        android:title="@string/Ervaringen" />
+        android:title="@string/ErvaringenMenu" />
     <item
         android:id="@+id/gebruikerFragment"
-        android:title="@string/GebruikersGegevens" />
+        android:title="@string/GebruikersGegevensMenu" />
     <item
         android:id="@+id/addErvaringFragment"
-        android:title="Voeg ervaring toe" />
-    <item
-        android:id="@+id/mainFragment"
-        android:title="Home"/>
+        android:title="@string/ToevoegenMenu"/>
+
 </menu>

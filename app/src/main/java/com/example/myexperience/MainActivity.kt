@@ -12,13 +12,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        getSupportActionBar()?.setTitle("")
+//        getSupportActionBar()?.setTitle("M")
     }
-
-//    fun OnOptionMenuSelected(item: MenuItem) {
-//        when (item.itemId.equals("Home")){
-//
-//
-//        }
-
 }

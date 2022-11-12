@@ -17,6 +17,11 @@
             android:exported="false"
             android:label="@string/title_activity_gebruiker"
             android:theme="@style/Theme.MyExperience">
+            <intent-filter>
+                <action android:name="android.intent.action.GEBRUIKER" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

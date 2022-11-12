@@ -3,8 +3,10 @@ package com.example.myexperience
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.myexperience.databinding.FragmentAddErvaringBinding
@@ -19,9 +21,19 @@ class AddErvaringFragment : Fragment() {
 
         binding = DataBindingUtil.inflate(inflater,R.layout.fragment_add_ervaring, container, false)
 
-        viewModel = ViewModelProvider(this).get(AddErvaringViewModel::class.java)
+        val fact = AddErvaringViewModelFactory()
+
+        viewModel = ViewModelProvider(this, fact).get(AddErvaringViewModel::class.java)
 
         binding.myModel = viewModel
+
+        viewModel.error.observe(viewLifecycleOwner, Observer {
+            if (it){
+                showError()
+            }
+        })
+
+        binding.setLifecycleOwner(this)
 
         setHasOptionsMenu(true)
 
@@ -37,5 +49,11 @@ class AddErvaringFragment : Fragment() {
         return NavigationUI.
         onNavDestinationSelected(item,requireView().findNavController())
                 || super.onOptionsItemSelected(item)
+    }
+
+    fun showError() {
+        val error = viewModel.errorText.value
+        Toast.makeText(context, error, Toast.LENGTH_SHORT).show()
+        viewModel.errorMessageHandled()
     }
 }

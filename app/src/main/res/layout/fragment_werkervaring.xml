@@ -81,7 +81,7 @@
             android:layout_width="150dp"
             android:layout_height="40dp"
             android:layout_marginBottom="100dp"
-            android:backgroundTint="@color/material_dynamic_neutral90"
+            android:background="@color/material_dynamic_neutral_variant95"
             android:fontFamily="@font/advent_pro_medium"
             android:onClick="@{() -> myModel.naarVoegNieuweToe()}"
             android:shadowColor="@color/black"
@@ -91,6 +91,7 @@
             android:textColorHighlight="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
