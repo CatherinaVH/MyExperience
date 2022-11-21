@@ -9,27 +9,37 @@ class MockUpDB {
 
     }
 
-    fun getWerkervaring1() : werkErvaring {
+    fun getWerkervaring1() : WerkErvaring {
 
-        return werkErvaring("01/01/2022", "31/01/2022", "KBO Nederename", "opvang")
-
-    }
-
-    fun getWerkervaring2() : werkErvaring {
-
-        return werkErvaring("01/01/2021", "31/01/2021", "KBO Ename", "opvang")
+        return WerkErvaring("01/01/2022", "31/01/2022", "KBO Nederename", "opvang")
 
     }
 
-    fun getWerkervaring3() : werkErvaring {
+    fun getWerkervaring2() : WerkErvaring {
 
-        return werkErvaring("01/01/2020", "31/01/2020", "KBO Volkegem", "opvang")
+        return WerkErvaring("01/01/2021", "31/01/2021", "KBO Ename", "opvang")
 
     }
 
-    fun getWerkervaring4() : werkErvaring {
+    fun getWerkervaring3() : WerkErvaring {
 
-        return werkErvaring("01/01/2019", "31/01/2019", "KBO Mater", "opvang")
+        return WerkErvaring("01/01/2020", "31/01/2020", "KBO Volkegem", "opvang")
 
+    }
+
+    fun getWerkervaring4() : WerkErvaring {
+
+        return WerkErvaring("01/01/2019", "31/01/2019", "KBO Mater", "opvang")
+
+    }
+
+    fun getWerkervaringen() : List<WerkErvaring>{
+        val werkErvaringen = arrayOf(
+            WerkErvaring("01/01/2022", "31/01/2022", "KBO Nederename", "opvang"),
+            WerkErvaring("01/01/2021", "31/01/2021", "KBO Ename", "opvang"),
+            WerkErvaring("01/01/2020", "31/01/2020", "KBO Volkegem", "opvang"),
+            WerkErvaring("01/01/2019", "31/01/2019", "KBO Mater", "opvang"))
+
+        return werkErvaringen.toList()
     }
 }

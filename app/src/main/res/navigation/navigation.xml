@@ -45,8 +45,6 @@
             app:argType="com.example.myexperience.Gebruiker"/>
     </fragment>
 
-
-
     <fragment
         android:id="@+id/detailErvaringFragment"
         android:name="com.example.myexperience.DetailErvaringFragment"

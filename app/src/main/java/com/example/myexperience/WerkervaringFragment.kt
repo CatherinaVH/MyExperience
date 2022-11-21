@@ -9,6 +9,9 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
+import androidx.recyclerview.widget.DividerItemDecoration
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.myexperience.databinding.FragmentWerkervaringBinding
 
 class WerkervaringFragment : Fragment() {
@@ -19,29 +22,46 @@ class WerkervaringFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
-
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_werkervaring, container, false)
 
         val fact = WerkervaringViewModelFactory()
         viewModel = ViewModelProvider(this, fact).get(WerkervaringViewModel::class.java)
 
-        viewModel.navigeerNaarwerkErvaring.observe(viewLifecycleOwner, Observer {
-            if (it) {
-                navigeerNaarDetailErvaringen1()
+        binding.lijstErvaringen.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
+
+        val adapter = ListWerkervaringAdapter(WerkErvaringClickListener {
+            viewModel.clickWerkErvaring(it)
+        })
+
+        viewModel.ervaringen.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                adapter.submitList(it)
             }
         })
 
-        viewModel.navigeerNaarwerkErvaring.observe(viewLifecycleOwner, Observer {
-            if (it) {
-                navigeerNaarDetailErvaringen2()
-            }
-        })
+        binding.lijstErvaringen.adapter = adapter
+        val manager = LinearLayoutManager(activity)
+        binding.lijstErvaringen.layoutManager = manager
+
+//        viewModel.navigeerNaarwerkErvaring.observe(viewLifecycleOwner, Observer {
+//            if (it) {
+//                navigeerNaarDetailErvaringen1()
+//            }
+//        })
+//
+//        viewModel.navigeerNaarwerkErvaring.observe(viewLifecycleOwner, Observer {
+//            if (it) {
+//                navigeerNaarDetailErvaringen2()
+//            }
+//        })
 
         viewModel.voegNieuweErvaringToe.observe(viewLifecycleOwner, Observer {
             if (it) {
                 navigeerNaarNieuweToevoegen()
             }
         })
+
+
 
         binding.myModel = viewModel
 
@@ -61,38 +81,37 @@ class WerkervaringFragment : Fragment() {
                 || super.onOptionsItemSelected(item)
     }
 
-    private fun navigeerNaarDetailErvaringen1() {
-        var werkErvaring1: werkErvaring = viewModel.ervaring1.value!!
-        requireView().findNavController()
-            .navigate(WerkervaringFragmentDirections.actionWerkervaringFragmentToDetailErvaringFragment(werkErvaring1))
-        viewModel.navigateToWerkErvaringenFinished()
-    }
-
-    private fun navigeerNaarDetailErvaringen2() {
-        var werkErvaring2: werkErvaring = viewModel.ervaring2.value!!
-        requireView().findNavController()
-            .navigate(WerkervaringFragmentDirections.actionWerkervaringFragmentToDetailErvaringFragment(werkErvaring2))
-        viewModel.navigateToWerkErvaringenFinished()
-    }
-
-    private fun navigeerNaarDetailErvaringen3() {
-        var werkErvaring3: werkErvaring = viewModel.ervaring3.value!!
-        requireView().findNavController()
-            .navigate(WerkervaringFragmentDirections.actionWerkervaringFragmentToDetailErvaringFragment(werkErvaring3))
-        viewModel.navigateToWerkErvaringenFinished()
-    }
-
-    private fun navigeerNaarDetailErvaringen4() {
-        var werkErvaring4: werkErvaring = viewModel.ervaring4.value!!
-        requireView().findNavController()
-            .navigate(WerkervaringFragmentDirections.actionWerkervaringFragmentToDetailErvaringFragment(werkErvaring4))
-        viewModel.navigateToWerkErvaringenFinished()
-    }
-
     private fun navigeerNaarNieuweToevoegen() {
         requireView().findNavController()
             .navigate(WerkervaringFragmentDirections.actionWerkervaringFragmentToAddErvaringFragment())
         viewModel.navigateToAddWerkervaringFinished()
     }
-
 }
+
+//  private fun navigeerNaarDetailErvaringen1() {
+//        var werkErvaring1: werkErvaring = viewModel.ervaring1.value!!
+//        requireView().findNavController()
+//            .navigate(WerkervaringFragmentDirections.actionWerkervaringFragmentToDetailErvaringFragment(werkErvaring1))
+//        viewModel.navigateToWerkErvaringenFinished()
+//    }
+//
+//    private fun navigeerNaarDetailErvaringen2() {
+//        var werkErvaring2: werkErvaring = viewModel.ervaring2.value!!
+//        requireView().findNavController()
+//            .navigate(WerkervaringFragmentDirections.actionWerkervaringFragmentToDetailErvaringFragment(werkErvaring2))
+//        viewModel.navigateToWerkErvaringenFinished()
+//    }
+//
+//    private fun navigeerNaarDetailErvaringen3() {
+//        var werkErvaring3: werkErvaring = viewModel.ervaring3.value!!
+//        requireView().findNavController()
+//            .navigate(WerkervaringFragmentDirections.actionWerkervaringFragmentToDetailErvaringFragment(werkErvaring3))
+//        viewModel.navigateToWerkErvaringenFinished()
+//    }
+//
+//    private fun navigeerNaarDetailErvaringen4() {
+//        var werkErvaring4: werkErvaring = viewModel.ervaring4.value!!
+//        requireView().findNavController()
+//            .navigate(WerkervaringFragmentDirections.actionWerkervaringFragmentToDetailErvaringFragment(werkErvaring4))
+//        viewModel.navigateToWerkErvaringenFinished()
+//    }

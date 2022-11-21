@@ -23,8 +23,8 @@ class DetailErvaringFragment : Fragment() {
 
         val args = DetailErvaringFragmentArgs.fromBundle(requireArguments())
 
-        val fact = DetailErvaringViewModelFactory(args.werkErvaring)
-        viewModel = ViewModelProvider(this, fact).get(DetailErvaringViewModel::class.java)
+        //val fact = DetailErvaringViewModelFactory(args.WerkErvaring)
+        viewModel = ViewModelProvider(this).get(DetailErvaringViewModel::class.java)
 
         binding.myModel = viewModel
 

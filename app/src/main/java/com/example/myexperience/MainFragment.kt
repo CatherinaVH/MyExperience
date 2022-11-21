@@ -18,8 +18,10 @@ class MainFragment : Fragment() {
     private lateinit var viewModel: MainViewModel
     private lateinit var binding: FragmentMainBinding
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
 
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_main, container, false)
 
@@ -63,20 +65,20 @@ class MainFragment : Fragment() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.
-        onNavDestinationSelected(item,requireView().findNavController())
+        return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
                 || super.onOptionsItemSelected(item)
     }
 
     fun navigeerNaarGebruikerGegevens() {
-        var gebruiker : Gebruiker = viewModel.gebruiker.value!!
-        requireView().findNavController().navigate(MainFragmentDirections.actionMainFragmentToGebruikerFragment2(gebruiker))
+        var gebruiker: Gebruiker = viewModel.gebruiker.value!!
+        requireView().findNavController()
+            .navigate(MainFragmentDirections.actionMainFragmentToGebruikerFragment2(gebruiker))
         viewModel.naarGebruikerGegevensFinishec()
     }
 
     fun navigeerNaarErvaringen() {
-        var ervaring1: werkErvaring = viewModel.ervaring1.value!!
-        requireView().findNavController().navigate(MainFragmentDirections.actionMainFragmentToWerkervaringFragment(ervaring1))
-        viewModel.naarErvaringenFinished()
+//        requireView().findNavController()
+//            .navigate(MainFragmentDirections.actionMainFragmentToWerkervaringFragment())
+//        viewModel.naarErvaringenFinished()
     }
 }

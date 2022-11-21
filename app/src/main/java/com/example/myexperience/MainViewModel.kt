@@ -12,8 +12,8 @@ class MainViewModel : ViewModel() {
             return _gebruiker
         }
 
-    private var _ervaring1 : MutableLiveData<werkErvaring> = MutableLiveData()
-    val ervaring1: LiveData<werkErvaring>
+    private var _ervaring1 : MutableLiveData<WerkErvaring> = MutableLiveData()
+    val ervaring1: LiveData<WerkErvaring>
         get() {
             return _ervaring1
         }

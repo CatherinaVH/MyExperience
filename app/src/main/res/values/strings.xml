@@ -1,10 +1,7 @@
 <resources>
     <string name="app_name">Mijn WerkErvaringen</string>
-    <string name="welkomGebruiker">Welkom, %s</string>
     <string name="datumVan">Gewerkt vanaf: </string>
-    <string name="datumTot">Gewerkt tot: </string>
     <string name="GebruikersGegevens">Naar gegevens gebruiker</string>
-    <string name="testGebruiker">Test, %s</string>
     <string name="WelkomApp1">Welkom bij</string>
     <string name="WelkomApp2">Mijn Werkervaringen</string>
     <string name="Welkomtekst">Verzamel hier je ervaringen bij scholengroep Stad Gent</string>
@@ -21,10 +18,8 @@
     <string name="previous">Previous</string>
 
     <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="SchoolDetail">School:</string>
     <string name="nieuweToevoegen">Voeg nieuwe ervaring toe</string>
 </resources>
